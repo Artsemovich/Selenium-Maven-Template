@@ -39,7 +39,7 @@ public class YandexMarket extends DriverBase {
         price_max.sendKeys("25000");
         //Выбираем производителей из развернутого списка
         driver.findElement(By.xpath("//span[text() = 'Ещё']/..")).click();
-        driver.findElement(By.xpath("//label[@for='glf-7893318-267101']")).click();
+        driver.findElement(By.xpath("//div[@class='n-filter-block__list-items i-bem']//label[text() = 'Acer']")).click();
         WebElement d_category = driver.findElement(By.xpath("//div[text()='D']"));
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", d_category);
         driver.findElement(By.xpath("//label[@for='glf-7893318-153080']")).click();
@@ -54,7 +54,7 @@ public class YandexMarket extends DriverBase {
         WebElement search = driver.findElement(By.xpath("//input[@aria-labelledby='header-search header-search-label']"));
         search.sendKeys(find_tablet);
         search.submit();
-        String concret_tablet_title =  driver.findElement(By.xpath("//h1[contains(@class,'title title_size_22')]")).getText();
-        find_tablet.equals(concret_tablet_title);
+        String concrete_tablet_title =  driver.findElement(By.xpath("//h1[contains(@class,'title title_size_22')]")).getText();
+        find_tablet.equals(concrete_tablet_title);
     }
 }
