@@ -46,9 +46,9 @@ public class YandexMarket extends DriverBase {
         driver.findElement(By.xpath("//span[text() = 'Показать подходящие']/..")).click();
         //Создаем список всех найденных товаров
         List<WebElement> search_results = driver.findElements(By.xpath("//div[@class='n-snippet-card2__part n-snippet-card2__part_type_center']"));
-        //Убеждаемся что товара 4
-        assertThat(4, equalTo(search_results.size()));
-        //Сохраняем название товара и ищем такой товар через поиск
+        //Убеждаемся что товара 10
+        assertThat(10, equalTo(search_results.size()));
+        //Сохраняем название4 товара и ищем такой товар через поиск
         WebElement tablet = search_results.get(1);
         String find_tablet = tablet.findElement(By.xpath(".//descendant::a")).getText();
         WebElement search = driver.findElement(By.xpath("//input[@aria-labelledby='header-search header-search-label']"));
